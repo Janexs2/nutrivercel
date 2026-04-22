@@ -16,14 +16,14 @@ const sintomas = [
 
 export function Dores() {
   return (
-    <section className="py-12 md:py-20 px-4 bg-[#0F4C5C] relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-[#0F4C5C] relative overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-10 right-10 w-32 h-32 border-4 border-white rounded-full" />
         <div className="absolute bottom-20 left-20 w-24 h-24 border-4 border-white rounded-full" />
       </div>
       
-      <div className="container mx-auto max-w-4xl relative z-10">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 relative z-10">
         <motion.div 
           className="text-center"
           initial={{ opacity: 0, y: 30 }}
@@ -71,26 +71,24 @@ export function Dores() {
             </div>
           </div>
           
-          {/* Two-tone CTA button */}
-          <div className="flex justify-center">
-            <div className="inline-flex rounded-full overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <a 
-                href={CONFIG.whatsappLink} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="px-6 py-4 bg-white text-[#0F4C5C] font-bold uppercase tracking-wide text-sm hover:bg-gray-100 transition-colors"
-              >
-                AGENDAR MINHA CONSULTA AGORA
-              </a>
-              <a 
-                href={CONFIG.whatsappLink} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="px-6 py-4 bg-[#D4AF37] text-[#1a1a1a] font-bold uppercase tracking-wide text-sm hover:bg-[#c9a030] transition-colors"
-              >
-                AGENDAR
-              </a>
-            </div>
+          {/* Fixed CTA buttons - stacked on mobile */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a 
+              href={CONFIG.whatsappLink} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="px-8 py-4 bg-white text-[#0F4C5C] font-bold rounded-full shadow-lg text-center whitespace-nowrap hover:bg-gray-100 transition-colors"
+            >
+              AGENDAR MINHA CONSULTA AGORA
+            </a>
+            <a 
+              href={CONFIG.whatsappLink} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="px-8 py-4 bg-[#D4AF37] text-[#1A1A1A] font-bold rounded-full shadow-lg text-center whitespace-nowrap hover:bg-[#c9a030] transition-colors"
+            >
+              AGENDAR
+            </a>
           </div>
         </motion.div>
       </div>

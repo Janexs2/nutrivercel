@@ -1,7 +1,6 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
 import { Youtube, Check } from "lucide-react"
 
 const conteudos = [
@@ -15,73 +14,85 @@ const conteudos = [
 
 export function YouTubeSection() {
   return (
-    <section className="py-12 md:py-20 px-4 bg-white">
-      <div className="container mx-auto max-w-5xl">
+    <section className="py-16 md:py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
         <motion.div
-          className="bg-[#0F4C5C] rounded-2xl p-8 md:p-12 overflow-hidden relative"
+          className="text-center mb-12"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="flex flex-col md:flex-row items-center gap-8">
-            {/* Left - YouTube icon */}
-            <motion.div 
-              className="shrink-0"
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              <div className="w-24 h-24 bg-[#FF0000] rounded-2xl flex items-center justify-center">
-                <Youtube className="w-12 h-12 text-white" />
-              </div>
-            </motion.div>
-            
-            {/* Right - Content */}
-            <div className="flex-1 text-center md:text-left">
-              <h3 className="font-serif text-2xl md:text-3xl text-white mb-4 uppercase">
-                CONTEÚDO EXCLUSIVO NO <span className="text-[#D4AF37]">YOUTUBE</span>
-              </h3>
-              
-              <p className="text-white/80 text-lg mb-6">
-                Acesse nosso canal e encontre:
-              </p>
-              
-              <div className="grid sm:grid-cols-2 gap-3 mb-6">
-                {conteudos.map((conteudo, index) => (
-                  <div key={index} className="flex items-center gap-2 text-white/90">
-                    <Check className="w-5 h-5 text-[#D4AF37] shrink-0" />
-                    <span className="text-sm">{conteudo}</span>
-                  </div>
-                ))}
-              </div>
-              
-              <p className="text-white/70 text-sm mb-6">
-                Compartilho semanalmente conteúdos gratuitos para ajudar famílias atípicas a encontrarem mais qualidade de vida através da alimentação e da nutrição funcional.
-              </p>
-              
-              <Button 
-                asChild
-                size="lg"
-                variant="outline"
-                className="border-2 border-white text-white hover:bg-white hover:text-[#0F4C5C] px-8 py-6 text-base font-bold rounded-full transition-all duration-300 uppercase tracking-wide bg-transparent"
-              >
-                <a href="https://www.youtube.com/@autismonutricaotea" target="_blank" rel="noopener noreferrer">
-                  ACESSE NOSSO CANAL NO YOUTUBE
-                </a>
-              </Button>
-              
-              <p className="text-[#25D366] text-xs mt-4 font-medium">
-                Link ativo
-              </p>
-            </div>
-          </div>
-          
-          {/* Decorative elements */}
-          <div className="absolute -top-20 -right-20 w-40 h-40 border-4 border-white/5 rounded-full" />
-          <div className="absolute -bottom-10 -left-10 w-32 h-32 border-4 border-white/5 rounded-full" />
+          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl mb-4 text-[#1a1a1a] uppercase">
+            CONTEÚDO EXCLUSIVO NO <span className="text-[#D4AF37]">YOUTUBE</span>
+          </h2>
+          <p className="text-lg text-[#4a4a4a] max-w-2xl mx-auto">
+            Compartilho semanalmente conteúdos gratuitos para ajudar famílias atípicas a encontrarem mais qualidade de vida através da alimentação e da nutrição funcional.
+          </p>
         </motion.div>
+        
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          {/* YouTube Embed */}
+          <motion.div
+            className="aspect-video rounded-2xl overflow-hidden shadow-2xl bg-black"
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <iframe 
+              width="100%" 
+              height="100%" 
+              src="https://www.youtube.com/embed/VIDEO_ID" 
+              title="Canal YouTube - Autismo e Nutrição"
+              frameBorder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowFullScreen
+              className="w-full h-full"
+            />
+          </motion.div>
+          
+          {/* Content */}
+          <motion.div
+            className="bg-[#0F4C5C] rounded-2xl p-8 md:p-10"
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-14 h-14 bg-[#FF0000] rounded-2xl flex items-center justify-center">
+                <Youtube className="w-7 h-7 text-white" />
+              </div>
+              <h3 className="font-serif text-xl md:text-2xl text-white">
+                Acesse nosso canal e encontre:
+              </h3>
+            </div>
+            
+            <div className="grid gap-3 mb-8">
+              {conteudos.map((conteudo, index) => (
+                <div key={index} className="flex items-center gap-3 text-white/90">
+                  <Check className="w-5 h-5 text-[#D4AF37] shrink-0" />
+                  <span>{conteudo}</span>
+                </div>
+              ))}
+            </div>
+            
+            <a 
+              href="https://www.youtube.com/@autismonutricaotea" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-[#FF0000] text-white font-bold rounded-full shadow-lg hover:bg-[#cc0000] transition-colors"
+            >
+              <Youtube className="w-5 h-5" />
+              ACESSE NOSSO CANAL
+            </a>
+            
+            <p className="text-[#25D366] text-sm mt-4 font-medium">
+              Link ativo
+            </p>
+          </motion.div>
+        </div>
       </div>
     </section>
   )

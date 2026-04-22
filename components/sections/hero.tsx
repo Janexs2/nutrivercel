@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion"
 import { CONFIG } from "@/lib/config"
-import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import { MapPin } from "lucide-react"
 
@@ -37,12 +36,32 @@ export function Hero() {
       </motion.div>
       
       {/* Content */}
-      <div className="flex-1 flex items-center px-4 py-12 md:py-16 relative z-10">
-        <div className="container mx-auto max-w-6xl">
+      <div className="flex-1 flex items-center relative z-10">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 py-12 md:py-16">
           <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
-            {/* Left - Image */}
+            
+            {/* Mobile Only - Circular Avatar */}
             <motion.div 
-              className="flex-1 max-w-md lg:max-w-lg w-full order-2 lg:order-1"
+              className="lg:hidden flex justify-center"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+            >
+              <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-[#0F4C5C] shadow-xl">
+                <Image
+                  src={CONFIG.fotoCircular}
+                  alt={`${CONFIG.nome} - Nutricionista`}
+                  width={128}
+                  height={128}
+                  className="object-cover w-full h-full"
+                  priority
+                />
+              </div>
+            </motion.div>
+            
+            {/* Desktop Only - Large Image */}
+            <motion.div 
+              className="hidden lg:block flex-1 max-w-lg w-full order-2 lg:order-1"
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -91,26 +110,24 @@ export function Hero() {
                 <span className="text-sm font-medium">Atendimento online para todo o Brasil e mundo</span>
               </div>
               
-              {/* Two-tone CTA button */}
-              <div className="flex justify-center lg:justify-start">
-                <div className="inline-flex rounded-full overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-                  <a 
-                    href={CONFIG.whatsappLink} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="px-6 py-4 bg-[#0F4C5C] text-white font-bold uppercase tracking-wide text-sm hover:bg-[#0a3a47] transition-colors"
-                  >
-                    QUERO AGENDAR UMA CONSULTA
-                  </a>
-                  <a 
-                    href={CONFIG.whatsappLink} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="px-6 py-4 bg-[#D4AF37] text-[#1a1a1a] font-bold uppercase tracking-wide text-sm hover:bg-[#c9a030] transition-colors"
-                  >
-                    AGENDAR
-                  </a>
-                </div>
+              {/* Fixed CTA buttons - stacked on mobile */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <a 
+                  href={CONFIG.whatsappLink} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="px-8 py-4 bg-[#0F4C5C] text-white font-bold rounded-full shadow-lg text-center whitespace-nowrap hover:bg-[#0a3a47] transition-colors"
+                >
+                  AGENDAR MINHA CONSULTA
+                </a>
+                <a 
+                  href={CONFIG.whatsappLink} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="px-8 py-4 bg-[#D4AF37] text-[#1A1A1A] font-bold rounded-full shadow-lg text-center whitespace-nowrap hover:bg-[#c9a030] transition-colors"
+                >
+                  AGENDAR
+                </a>
               </div>
             </motion.div>
           </div>

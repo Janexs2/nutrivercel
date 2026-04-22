@@ -32,8 +32,8 @@ const painPoints = [
 
 export function Apoio() {
   return (
-    <section className="py-12 md:py-20 px-4 bg-white">
-      <div className="container mx-auto max-w-5xl">
+    <section className="py-16 md:py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
         <motion.div
           className="text-center mb-12"
           initial={{ opacity: 0, y: 30 }}
@@ -47,7 +47,7 @@ export function Apoio() {
         </motion.div>
         
         {/* Pain points grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {painPoints.map((item, index) => {
             const Icon = item.icon
             return (

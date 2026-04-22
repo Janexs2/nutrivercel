@@ -6,8 +6,8 @@ import { Button } from "@/components/ui/button"
 
 export function Depoimentos() {
   return (
-    <section className="py-12 md:py-20 px-4 bg-white">
-      <div className="container mx-auto max-w-6xl">
+    <section className="py-16 md:py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
         <motion.div
           className="text-center mb-12"
           initial={{ opacity: 0, y: 30 }}
@@ -22,7 +22,7 @@ export function Depoimentos() {
         </motion.div>
         
         {/* WhatsApp testimonials - screenshots grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {/* Testimonial screenshot placeholders - these would be real WhatsApp screenshots */}
           {CONFIG.depoimentos.map((depoimento, index) => (
             <motion.div

@@ -7,8 +7,8 @@ import { BookOpen, MessageCircle } from "lucide-react"
 
 export function HotmartSection() {
   return (
-    <section className="py-12 md:py-20 px-4 bg-[#FAF9F6]">
-      <div className="container mx-auto max-w-5xl">
+    <section className="py-16 md:py-24 bg-[#FAF9F6]">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
         <motion.div
           className="text-center mb-12"
           initial={{ opacity: 0, y: 30 }}
@@ -25,7 +25,7 @@ export function HotmartSection() {
         </motion.div>
         
         {/* Product cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-10">
           {CONFIG.hotmartProdutos.map((produto, index) => (
             <motion.div
               key={produto.titulo}
