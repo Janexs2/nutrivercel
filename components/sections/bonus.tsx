@@ -9,7 +9,7 @@ export function Bonus() {
   const bonusWhatsappLink = `https://wa.me/55XXXXXXXXXXX?text=${encodeURIComponent("Olá, Dra. Joice! Vim pela página e gostaria de receber o Ebook de Receitas. Quero melhorar a alimentação do meu filho(a).")}`
 
   return (
-    <section className="py-12 md:py-20 px-4 bg-[#0F4C5C] relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-[#0F4C5C] relative overflow-hidden">
       {/* Decorative dots */}
       <div className="absolute top-10 left-10 flex flex-col gap-2 opacity-20">
         {[...Array(5)].map((_, i) => (
@@ -30,10 +30,10 @@ export function Bonus() {
         ))}
       </div>
       
-      <div className="container mx-auto max-w-5xl relative z-10">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 relative z-10">
         {/* Bonus Card */}
         <motion.div
-          className="bg-[#0a3a47] rounded-2xl overflow-hidden"
+          className="bg-[#0a3a47] rounded-2xl overflow-hidden shadow-2xl"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -42,7 +42,7 @@ export function Bonus() {
           <div className="flex flex-col md:flex-row items-center">
             {/* E-book image */}
             <div className="w-full md:w-2/5 p-6 md:p-8 flex justify-center">
-              <div className="relative w-52 rounded-lg overflow-hidden shadow-xl">
+              <div className="relative w-52 rounded-2xl overflow-hidden shadow-xl">
                 <Image
                   src={CONFIG.ebookImage}
                   alt="E-book Receitas para Crianças Atípicas"
