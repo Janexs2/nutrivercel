@@ -7,7 +7,7 @@ import { BookOpen, MessageCircle } from "lucide-react"
 
 export function HotmartSection() {
   return (
-    <section className="py-16 md:py-20 px-4 bg-[#FAF9F6]">
+    <section className="py-12 md:py-20 px-4 bg-[#FAF9F6]">
       <div className="container mx-auto max-w-5xl">
         <motion.div
           className="text-center mb-12"
@@ -25,11 +25,11 @@ export function HotmartSection() {
         </motion.div>
         
         {/* Product cards */}
-        <div className="grid md:grid-cols-3 gap-6 mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
           {CONFIG.hotmartProdutos.map((produto, index) => (
             <motion.div
               key={produto.titulo}
-              className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300"
+              className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -40,17 +40,17 @@ export function HotmartSection() {
                 <BookOpen className="w-7 h-7 text-[#D4AF37]" />
               </div>
               
-              <h3 className="font-bold text-[#1a1a1a] text-lg mb-3 uppercase">
+              <h3 className="font-bold text-[#1a1a1a] text-lg mb-3 uppercase min-h-[56px]">
                 {produto.titulo}
               </h3>
               
-              <p className="text-[#4a4a4a] text-sm mb-6 leading-relaxed">
+              <p className="text-[#4a4a4a] text-sm mb-6 leading-relaxed min-h-[60px]">
                 {produto.descricao}
               </p>
               
               <Button 
                 asChild
-                className="w-full bg-[#D4AF37] text-[#1a1a1a] hover:bg-[#c9a030] font-bold rounded-full"
+                className="w-full bg-[#D4AF37] text-[#1a1a1a] hover:bg-[#c9a030] font-bold rounded-full py-3"
               >
                 <a href={CONFIG.whatsappLink} target="_blank" rel="noopener noreferrer">
                   QUERO ADQUIRIR AGORA

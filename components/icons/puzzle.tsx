@@ -1,21 +1,5 @@
+import { Puzzle } from "lucide-react"
+
 export function PuzzleIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 64 64"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={className}
-    >
-      <path
-        d="M28 8C28 5.79 26.21 4 24 4C21.79 4 20 5.79 20 8H12C10.9 8 10 8.9 10 10V18C7.79 18 6 19.79 6 22C6 24.21 7.79 26 10 26V34C10 35.1 10.9 36 12 36H20C20 38.21 21.79 40 24 40C26.21 40 28 38.21 28 36H36C37.1 36 38 35.1 38 34V26C40.21 26 42 24.21 42 22C42 19.79 40.21 18 38 18V10C38 8.9 37.1 8 36 8H28Z"
-        fill="currentColor"
-        fillOpacity="0.3"
-      />
-      <path
-        d="M44 28C44 25.79 42.21 24 40 24C37.79 24 36 25.79 36 28H28C26.9 28 26 28.9 26 30V38C23.79 38 22 39.79 22 42C22 44.21 23.79 46 26 46V54C26 55.1 26.9 56 28 56H36C36 58.21 37.79 60 40 60C42.21 60 44 58.21 44 56H52C53.1 56 54 55.1 54 54V46C56.21 46 58 44.21 58 42C58 39.79 56.21 38 54 38V30C54 28.9 53.1 28 52 28H44Z"
-        fill="currentColor"
-        fillOpacity="0.6"
-      />
-    </svg>
-  )
+  return <Puzzle className={className} strokeWidth={1.5} />
 }

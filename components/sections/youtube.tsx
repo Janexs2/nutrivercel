@@ -1,7 +1,6 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { CONFIG } from "@/lib/config"
 import { Button } from "@/components/ui/button"
 import { Youtube, Check } from "lucide-react"
 
@@ -16,10 +15,10 @@ const conteudos = [
 
 export function YouTubeSection() {
   return (
-    <section className="py-16 md:py-20 px-4 bg-white">
+    <section className="py-12 md:py-20 px-4 bg-white">
       <div className="container mx-auto max-w-5xl">
         <motion.div
-          className="bg-[#0F4C5C] rounded-3xl p-8 md:p-12 overflow-hidden relative"
+          className="bg-[#0F4C5C] rounded-2xl p-8 md:p-12 overflow-hidden relative"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -68,13 +67,13 @@ export function YouTubeSection() {
                 variant="outline"
                 className="border-2 border-white text-white hover:bg-white hover:text-[#0F4C5C] px-8 py-6 text-base font-bold rounded-full transition-all duration-300 uppercase tracking-wide bg-transparent"
               >
-                <a href={CONFIG.youtubeLink} target="_blank" rel="noopener noreferrer">
+                <a href="https://www.youtube.com/@autismonutricaotea" target="_blank" rel="noopener noreferrer">
                   ACESSE NOSSO CANAL NO YOUTUBE
                 </a>
               </Button>
               
-              <p className="text-white/50 text-xs mt-4">
-                Link será adicionado após conclusão da página
+              <p className="text-[#25D366] text-xs mt-4 font-medium">
+                Link ativo
               </p>
             </div>
           </div>

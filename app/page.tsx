@@ -16,14 +16,14 @@ import { WhatsAppButton } from "@/components/whatsapp-button"
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-white overflow-x-hidden">
       {/* 1. Hero Section */}
       <Hero />
       
       {/* 2. Secao de Dores - Problemas que o publico enfrenta */}
       <Dores />
       
-      {/* 3. Secao Abordagem Integrativa */}
+      {/* 3. Para Quem E - Checklist */}
       <Abordagem />
       
       {/* 4. Box Neurosuplementacao */}
@@ -32,31 +32,31 @@ export default function Home() {
       {/* 5. Secao de Apoio - Voce nao precisa lidar sozinho */}
       <Apoio />
       
-      {/* 6. Secao Pessoal - Conexao com a familia */}
+      {/* 6. Como Funciona o Acompanhamento */}
       <Conexao />
       
-      {/* 7. Timeline da Consulta - Como funciona */}
+      {/* 7. Timeline da Consulta */}
       <Timeline />
       
-      {/* 8A. Bloco YouTube */}
-      <YouTubeSection />
-      
-      {/* 8B. Bloco Hotmart - Produtos Digitais */}
-      <HotmartSection />
-      
-      {/* 9. Secao de Fechamento + Bonus */}
+      {/* 8. Bonus - E-book */}
       <Bonus />
       
-      {/* 10. Prova Social - Depoimentos */}
+      {/* 9. Prova Social - Depoimentos */}
       <Depoimentos />
       
-      {/* 11. Sobre - Apresentacao profissional */}
+      {/* 10. Sobre - Apresentacao profissional */}
       <Sobre />
       
-      {/* 12. FAQ - Perguntas frequentes */}
+      {/* 11. FAQ - Perguntas frequentes */}
       <FAQ />
       
-      {/* 13. Rodape */}
+      {/* 12. Bloco Hotmart - Produtos Digitais */}
+      <HotmartSection />
+      
+      {/* 13. Bloco YouTube - ULTIMO antes do Footer */}
+      <YouTubeSection />
+      
+      {/* 14. Rodape */}
       <Footer />
       
       {/* Botao flutuante do WhatsApp */}
