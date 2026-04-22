@@ -3,11 +3,10 @@
 import { motion } from "framer-motion"
 import { CONFIG } from "@/lib/config"
 import { Button } from "@/components/ui/button"
-import Image from "next/image"
 
 export function Depoimentos() {
   return (
-    <section className="py-16 md:py-24 px-4 bg-white">
+    <section className="py-12 md:py-20 px-4 bg-white">
       <div className="container mx-auto max-w-6xl">
         <motion.div
           className="text-center mb-12"
@@ -23,12 +22,12 @@ export function Depoimentos() {
         </motion.div>
         
         {/* WhatsApp testimonials - screenshots grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {/* Testimonial screenshot placeholders - these would be real WhatsApp screenshots */}
-          {[1, 2, 3].map((index) => (
+          {CONFIG.depoimentos.map((depoimento, index) => (
             <motion.div
               key={index}
-              className="rounded-2xl overflow-hidden shadow-lg bg-[#ECE5DD]"
+              className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 bg-[#ECE5DD]"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -38,26 +37,26 @@ export function Depoimentos() {
               <div className="bg-[#075E54] px-4 py-3 flex items-center gap-3">
                 <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
                   <span className="text-white text-xs font-bold">
-                    {CONFIG.depoimentos[index - 1]?.nome?.charAt(0) || "P"}
+                    {depoimento.nome.charAt(0)}
                   </span>
                 </div>
                 <div className="flex-1">
                   <p className="text-white font-semibold text-sm">
-                    {CONFIG.depoimentos[index - 1]?.nome || "Família Paciente"}
+                    {depoimento.nome}
                   </p>
                   <p className="text-white/70 text-xs">online</p>
                 </div>
               </div>
               
               {/* Message area */}
-              <div className="p-4 min-h-[200px]" style={{ backgroundImage: "url('/images/whatsapp-bg.png')", backgroundSize: "cover" }}>
+              <div className="p-4 min-h-[200px] bg-[#ddd5cc]">
                 {/* Message bubble */}
-                <div className="bg-white rounded-lg p-3 shadow-sm max-w-[90%] relative">
+                <div className="bg-white rounded-2xl p-4 shadow-sm max-w-[90%] relative">
                   <p className="text-[#1a1a1a] text-sm leading-relaxed">
-                    {CONFIG.depoimentos[index - 1]?.texto || "Depoimento de família atendida"}
+                    {depoimento.texto}
                   </p>
-                  {/* Bubble tail */}
-                  <div className="absolute -left-2 top-2 w-0 h-0 border-t-8 border-t-transparent border-r-8 border-r-white border-b-8 border-b-transparent" />
+                  {/* Time */}
+                  <span className="text-[#999] text-xs block text-right mt-2">10:30</span>
                 </div>
               </div>
             </motion.div>

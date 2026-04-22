@@ -3,10 +3,11 @@
 import { motion } from "framer-motion"
 import { CONFIG } from "@/lib/config"
 import { Button } from "@/components/ui/button"
+import { Instagram, Youtube } from "lucide-react"
 
 export function Footer() {
   return (
-    <footer className="py-16 px-4 bg-[#0F4C5C]">
+    <footer className="py-12 md:py-16 px-4 bg-[#0F4C5C]">
       <div className="container mx-auto max-w-4xl">
         {/* Final CTA */}
         <motion.div 
@@ -16,7 +17,7 @@ export function Footer() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h3 className="font-serif text-2xl md:text-3xl text-white mb-4">
+          <h3 className="font-serif text-2xl md:text-3xl text-white mb-4 text-balance">
             Seu filho merece um acompanhamento nutricional especializado
           </h3>
           
@@ -34,6 +35,28 @@ export function Footer() {
             </a>
           </Button>
         </motion.div>
+        
+        {/* Social Links */}
+        <div className="flex justify-center gap-4 mb-8">
+          <a 
+            href={CONFIG.instagramLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors"
+            aria-label="Instagram"
+          >
+            <Instagram className="w-5 h-5 text-white" />
+          </a>
+          <a 
+            href={CONFIG.youtubeLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors"
+            aria-label="YouTube"
+          >
+            <Youtube className="w-5 h-5 text-white" />
+          </a>
+        </div>
         
         {/* Divider */}
         <div className="h-px bg-white/20 mb-8" />

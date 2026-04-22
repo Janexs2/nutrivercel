@@ -9,9 +9,19 @@ import { MapPin } from "lucide-react"
 export function Hero() {
   return (
     <section className="relative min-h-screen flex flex-col bg-white overflow-hidden">
+      {/* Geometric background pattern */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        <div 
+          className="absolute inset-0 opacity-[0.04]" 
+          style={{ 
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D4AF37' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")` 
+          }} 
+        />
+      </div>
+      
       {/* Logo no topo */}
       <motion.div 
-        className="py-6 flex justify-center"
+        className="py-6 flex justify-center relative z-10"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -20,19 +30,19 @@ export function Hero() {
           <div className="w-16 h-16 rounded-full border-2 border-[#0F4C5C] flex items-center justify-center overflow-hidden">
             <span className="text-xl font-serif text-[#0F4C5C] font-bold">JM</span>
           </div>
-          <span className="text-xs tracking-[0.2em] text-[#0F4C5C] font-medium uppercase">
-            {CONFIG.badge}
+          <span className="text-xs tracking-[0.2em] text-[#0F4C5C] font-medium uppercase text-center px-4">
+            Nutrição Clínica Funcional Especializada em Autismo e TDAH
           </span>
         </div>
       </motion.div>
       
       {/* Content */}
-      <div className="flex-1 flex items-center px-4 py-12 md:py-16">
+      <div className="flex-1 flex items-center px-4 py-12 md:py-16 relative z-10">
         <div className="container mx-auto max-w-6xl">
           <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
             {/* Left - Image */}
             <motion.div 
-              className="flex-1 max-w-md lg:max-w-lg w-full order-1 lg:order-1"
+              className="flex-1 max-w-md lg:max-w-lg w-full order-2 lg:order-1"
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -43,7 +53,7 @@ export function Hero() {
                   <div className="absolute top-0 left-0 w-24 h-24 rounded-full bg-[#0F4C5C]" />
                   <div className="absolute bottom-0 right-0 w-32 h-32 rounded-full bg-[#0F4C5C]" />
                 </div>
-                <div className="relative aspect-[4/5] rounded-xl overflow-hidden shadow-2xl bg-[#0F4C5C]">
+                <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl bg-[#0F4C5C]">
                   <Image
                     src={CONFIG.fotoHero}
                     alt={`${CONFIG.nome} - Nutricionista especialista em TEA e TDAH`}
@@ -57,20 +67,22 @@ export function Hero() {
             
             {/* Right - Text Content */}
             <motion.div 
-              className="flex-1 text-center lg:text-left order-2 lg:order-2"
+              className="flex-1 text-center lg:text-left order-1 lg:order-2"
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[3.2rem] leading-tight mb-6 text-[#1a1a1a] text-balance">
-                <span className="text-[#D4AF37]">SEU FILHO(A) AUTISTA</span>{" "}
-                OU TDAH MERECE TER MAIS SAÚDE, DESENVOLVIMENTO E BEM-ESTAR COM SAÚDE INTEGRAL
+              <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[3.2rem] leading-tight mb-6 text-[#1a1a1a] text-balance uppercase">
+                <span className="text-[#D4AF37]">AUTISMO E NUTRIÇÃO:</span>{" "}
+                DA TEORIA À PRÁTICA
               </h1>
               
-              <p className="text-lg md:text-xl text-[#4a4a4a] mb-6 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                A abordagem integrativa trabalha de dentro para fora, abordando a causa dos sintomas, 
-                garantindo que seu filho receba todos os cuidados necessários para um desenvolvimento 
-                saudável e uma melhor qualidade de vida.
+              <p className="text-xl md:text-2xl text-[#1a1a1a] font-semibold mb-4">
+                Seu filho pode evoluir muito mais com a nutrição certa
+              </p>
+              
+              <p className="text-lg text-[#4a4a4a] mb-6 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                Atendimento especializado em Autismo, TDAH, seletividade alimentar, saúde intestinal e suplementação individualizada. Ajudo famílias atípicas a melhorar comportamento, foco, sono, intestino, imunidade e alimentação da criança através de um plano nutricional humanizado e baseado em ciência.
               </p>
               
               {/* Location badge */}
@@ -79,26 +91,26 @@ export function Hero() {
                 <span className="text-sm font-medium">Atendimento online para todo o Brasil e mundo</span>
               </div>
               
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <Button 
-                  asChild
-                  size="lg"
-                  className="bg-[#0F4C5C] text-white hover:bg-[#0a3a47] px-8 py-6 text-base font-bold rounded-full shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5 uppercase tracking-wide"
-                >
-                  <a href={CONFIG.whatsappLink} target="_blank" rel="noopener noreferrer">
-                    Agendar minha consulta agora
+              {/* Two-tone CTA button */}
+              <div className="flex justify-center lg:justify-start">
+                <div className="inline-flex rounded-full overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  <a 
+                    href={CONFIG.whatsappLink} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="px-6 py-4 bg-[#0F4C5C] text-white font-bold uppercase tracking-wide text-sm hover:bg-[#0a3a47] transition-colors"
+                  >
+                    QUERO AGENDAR UMA CONSULTA
                   </a>
-                </Button>
-                
-                <Button 
-                  asChild
-                  size="lg"
-                  className="bg-[#D4AF37] text-[#1a1a1a] hover:bg-[#c9a030] px-8 py-6 text-base font-bold rounded-full shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5 uppercase tracking-wide"
-                >
-                  <a href={CONFIG.whatsappLink} target="_blank" rel="noopener noreferrer">
+                  <a 
+                    href={CONFIG.whatsappLink} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="px-6 py-4 bg-[#D4AF37] text-[#1a1a1a] font-bold uppercase tracking-wide text-sm hover:bg-[#c9a030] transition-colors"
+                  >
                     AGENDAR
                   </a>
-                </Button>
+                </div>
               </div>
             </motion.div>
           </div>

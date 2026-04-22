@@ -38,12 +38,13 @@ export function Sobre() {
               <span className="font-serif text-[120px] text-[#1a1a1a] whitespace-nowrap">JOICE JOICE JOICE</span>
             </div>
             
-            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl bg-[#0F4C5C]">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-[#0F4C5C]">
               <Image
                 src={CONFIG.fotoPessoal}
                 alt={`${CONFIG.nome} - Nutricionista`}
-                fill
-                className="object-cover"
+                width={320}
+                height={400}
+                className="object-cover w-full h-auto"
               />
             </div>
           </motion.div>
@@ -125,15 +126,17 @@ export function Sobre() {
               para vocês no Instagram e no YouTube, para tentar ajudar vocês o tempo todo.
             </motion.p>
             
-            <motion.p
-              className="text-center font-bold text-[#0F4C5C]"
+            <motion.div
+              className="text-center mt-8"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 1.0 }}
             >
-              {CONFIG.crn}
-            </motion.p>
+              <span className="inline-block bg-[#0F4C5C] text-white px-8 py-3 rounded-full text-lg font-bold">
+                {CONFIG.crn}
+              </span>
+            </motion.div>
           </div>
         </motion.div>
       </div>
